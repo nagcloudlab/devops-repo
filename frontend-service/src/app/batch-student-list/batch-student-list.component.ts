@@ -17,7 +17,7 @@ export class BatchStudentListComponent implements OnInit {
 
   handleBatchChange(event:any){
     const batchId=event.target.value;
-    this.httpClient.get(`http://localhost:8080/api/batch/${batchId}/students`)
+    this.httpClient.get(`http://52.66.214.20:8080/api/batch/${batchId}/students`)
     .subscribe((students:any)=>{
       this.batchStudents=students
     })
