@@ -23,7 +23,7 @@ pipeline {
             steps {
                 dir("frontend-service"){
                     script { 
-                        dockerImage = docker.build registry + ":latest" 
+                        dockerImage = docker.build registry 
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Cleaning up') { 
             steps { 
-                sh "docker rmi $registry:latest"
+                sh "docker rmi $registry"
                 sh "docker-compose down"  
                 sh "docker-compose up"  
             }
