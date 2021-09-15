@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  
+  backend-service:
+    build: backend-service
+    ports:
+      - 8080:8080
+    
+  frontend-service:
+    build: frontend-service
+    ports:
+      - 80:80
+     
+     
+        

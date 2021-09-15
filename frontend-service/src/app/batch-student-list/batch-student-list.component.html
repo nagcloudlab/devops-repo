@@ -1,0 +1,16 @@
+
+
+<select (change)="handleBatchChange($event)">
+    <option value="">choose batch</option>
+    <option>batch1</option>
+    <option>batch2</option>
+</select>
+<hr/>
+<table class="table">
+    <tbody>
+        <tr *ngFor="let student of batchStudents    ">
+            <td>{{student.name}}</td>
+            <td>{{student.gender}}</td>
+        </tr>
+    </tbody>
+</table>
