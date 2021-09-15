@@ -22,7 +22,7 @@ pipeline {
             steps {
                 dir("backend-service"){
                     script { 
-                        dockerImage = docker.build registry + ":$latest" 
+                        dockerImage = docker.build registry + ":latest" 
                     }
                 }
             }
