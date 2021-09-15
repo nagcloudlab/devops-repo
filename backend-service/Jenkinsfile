@@ -39,8 +39,6 @@ pipeline {
         stage('Cleaning up') { 
             steps { 
                 sh "docker rmi $registry:latest"
-                sh "docker-compose down"  
-                sh "docker-compose up"  
             }
         } 
     }
