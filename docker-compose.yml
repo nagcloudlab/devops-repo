@@ -5,12 +5,12 @@ services:
   backend-service:
     image: nagabhushanamn/backend-service
     ports:
-      - 8080:8080
+      - 8181:8080
     
   frontend-service:
     image: nagabhushanamn/frontend-service
     ports:
-      - 80:80
+      - 81:80
      
      
         
