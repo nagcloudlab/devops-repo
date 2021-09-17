@@ -15,6 +15,7 @@ pipeline {
             steps {
                 dir("frontend-service"){
                     sh 'npm i'
+                    sh "npm run test"
                     sh 'npm run build --production'
                 }
             }
