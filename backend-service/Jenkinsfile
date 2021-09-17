@@ -11,10 +11,38 @@ pipeline {
                 echo 'checkout..'
             }
         }
-        stage('build') {
+        stage('compile') {
             steps {
                 dir("backend-service"){
-                    sh 'mvn clean package'
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+        stage('unit-test') {
+            steps {
+                dir("backend-service"){
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('integration-testing') {
+            steps {
+                dir("backend-service"){
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('package') {
+            steps {
+                dir("backend-service"){
+                    sh 'mvn package'
+                }
+            }
+        }
+        stage('QA') {
+            steps {
+                dir("backend-service"){
+                    input "Ready to deploy?"
                 }
             }
         }
