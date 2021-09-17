@@ -18,30 +18,5 @@ pipeline {
                 }
             }
         }
-        stage('docker:build') {
-            steps {
-                dir("backend-service"){
-                    script { 
-                        dockerImage = docker.build registry + ":latest" 
-                    }
-                }
-            }
-        }
-        stage('docker:push') {
-            steps {
-                script { 
-                    docker.withRegistry('', registryCredential ) { 
-                        dockerImage.push() 
-                    }
-                } 
-            }
-        }
-        stage('Cleaning up') { 
-            steps { 
-                sh "docker rmi $registry:latest"
-                sh "docker-compose down"
-                sh "docker-compose up"
-            }
-        } 
-    }
+    }  
 }
