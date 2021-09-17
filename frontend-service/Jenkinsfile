@@ -12,8 +12,6 @@ pipeline {
             }
         }
         stage('test') {
-            steps {
-            }
         }
         stage('build') {
             steps {
